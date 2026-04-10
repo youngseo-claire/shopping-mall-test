@@ -1,0 +1,64 @@
+[설치]
+1. 서브페이지 - react-router-dom 
+2. 배너 목록 슬라이드 (플러그인) - swiper
+3. 전역변수 - zustand
+4. 회원가입,로그인 - firebase(이메일, 구글 정도)
+5. 카카오로그인 - 
+
+src폴더에 폴더 만들기
+1. components
+2.store
+3. pages
+4. firebase
+
+app.jsx
+<>안에 다 삭제
+main.jsx 에 <BrowserRouter> 씌우기
+
+Page.jsx파일들 pages폴더 안에 만들기
+Header,Footer는 components폴더 안에 만들기
+이미지들은 public 폴더 안에 넣어서 만들기
+
+<Link to="/"> 상단 돌아가기 <Link>사용시 반드시 import되는지 확인 할 것
+
+Pages,components
+1.Header 만들고 app에 넣기
+2.Footer 만들고 app에 넣기
+3.Pages에 각각 페이지 Home부터 만들기~
+4.NotFound페이지 만들기
+5.로그인 페이지
+6.장바구니 페이지
+7.회원가입 페이지
+
+app에 만들어주는데 import되었는지 확인 할 것
+   <>
+      <Header />
+<Routes>
+  <Route />
+</Routes>
+      <Footer />
+    </>
+
+components폴더에 scss폴더 만들어서
+각 scss만들어 주기
+
+git에 올릴때 api 키를 별도로 저장하여야함
+- src폴더 밖에 저장해야하며, 이름은 .env라고 저장함
+저장하는 형식을
+VITE_FIREBASE_API_KEY 이런식으로 모두 대문자로 쓰고 = ~ 라고 해줘야함
+firebase폴더에 다시 저장해서 키값 import.meta.env. 이런식으로 불러와주고
+
+export const auth = getAuth(app) - import 되게 불러와야함
+export const GoogleProvider = new GoogleAuthProvider();
+//zustand 전역변수 사용
+export const auth = getAuth(app);
+export const GoogleProvider = new GoogleAuthProvider();
+//데이터 베이스 연결
+//상품저장, 주문데이터 저장
+export const db = getFirestore(app);
+//파일 업로드용, 상품이미지 등록...
+export const storage = getStorage(app);
+
+firbase사이트에서 Firestore에서 db저장해주는 - 유료
+
+
